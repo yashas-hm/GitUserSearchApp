@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GitHub Search</string>
+    <string name="search">Search</string>
+    <string name="exit">Exit</string>
+    <string name="github_search">GitHub Search</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="result">Result</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_minimum_followers_optional">Enter min. followers(optional)</string>
+    <string name="enter_minimum_repos_optional">Enter min. Repos(optional)</string>
+    <string name="name">Name</string>
+    <string name="no_results_found">No Results Found</string>
+    <string name="no_more_results">No more results</string>
+    <string name="id">Id</string>
+
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_cornors"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/Extra">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_cornors"
+            android:src="@drawable/name"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_toEndOf="@id/imgAvatar"
+            android:layout_marginEnd="10dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="25sp"
+            android:background="@drawable/round_cornors"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"/>
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/id"
+        android:layout_toEndOf="@id/imgAvatar"
+        android:layout_below="@id/txtName"
+        android:layout_marginEnd="10dp"
+        android:layout_marginVertical="10dp"
+        android:textSize="25sp"
+        android:background="@drawable/round_cornors"
+        android:backgroundTint="@color/colorPrimary"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchFragment"
+    android:background="@color/colorAccent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_cornors"
+            android:backgroundTint="@color/Extra"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="40dp"
+            android:hint="@string/enter_name"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:inputType="text"
+            android:drawableEnd="@drawable/name"
+            tools:targetApi="lollipop"/>
+
+        <EditText
+            android:id="@+id/etFollowers"
+            android:layout_below="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_cornors"
+            android:backgroundTint="@color/Extra"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="40dp"
+            android:hint="@string/enter_minimum_followers_optional"
+
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:inputType="number"
+            android:drawableEnd="@drawable/followers"
+            tools:targetApi="lollipop"/>
+
+        <EditText
+            android:id="@+id/etRepos"
+            android:layout_below="@+id/etFollowers"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_cornors"
+            android:backgroundTint="@color/Extra"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="40dp"
+            android:hint="@string/enter_minimum_repos_optional"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:inputType="number"
+            android:drawableEnd="@drawable/repos"
+            tools:targetApi="lollipop"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_below="@id/etRepos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/round_cornors"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="40dp"
+            android:text="@string/search"
+            android:textColor="@android:color/white"
+            tools:targetApi="lollipop" />
+
+    </RelativeLayout>
+</FrameLayout>

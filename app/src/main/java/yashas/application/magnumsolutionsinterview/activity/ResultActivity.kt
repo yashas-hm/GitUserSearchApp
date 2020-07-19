@@ -154,6 +154,7 @@ class ResultActivity : AppCompatActivity() {
                     if (loading){
                         loading=false
                         progressBar.visibility = View.VISIBLE
+                        txtEnd.visibility = View.INVISIBLE
                         count+=1
                         url = if(repo!=""&&followers!=""){
                             "https://api.github.com/search/users?q=$name+repos:%3e$repo+followers:%3e$followers&page=$count"
@@ -170,7 +171,7 @@ class ResultActivity : AppCompatActivity() {
                                 progressBar.visibility = View.INVISIBLE
                                 loading = false
                             }
-                        },500)
+                        },2000)
                     }
                 }
             }
@@ -179,7 +180,7 @@ class ResultActivity : AppCompatActivity() {
 
     fun loadMore(url: String): Boolean{
         val queue = Volley.newRequestQueue(this@ResultActivity)
-        var more = false
+        var more = true
         val extraData = arrayListOf<Data>()
         println("Request sent $count")
         if (ConnectionManager().checkConnectivity(this@ResultActivity)){
@@ -211,8 +212,8 @@ class ResultActivity : AppCompatActivity() {
                                 )
                             recyclerView.adapter = recyclerAdapter
                             recyclerView.layoutManager = layoutManager
+                            recyclerAdapter.notifyItemInserted(position)
                             recyclerAdapter.notifyDataSetChanged()
-                            recyclerView.findViewHolderForLayoutPosition(position)
                         }
                         position=searchData.size
                         more = true

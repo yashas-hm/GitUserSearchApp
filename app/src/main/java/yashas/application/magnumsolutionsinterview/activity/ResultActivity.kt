@@ -180,6 +180,7 @@ class ResultActivity : AppCompatActivity() {
 
     fun loadMore(url: String): Boolean{
         val queue = Volley.newRequestQueue(this@ResultActivity)
+        progressBar.visibility = View.INVISIBLE
         var more = true
         val extraData = arrayListOf<Data>()
         println("Request sent $count")

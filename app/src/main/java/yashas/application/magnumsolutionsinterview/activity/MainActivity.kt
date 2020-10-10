@@ -81,10 +81,10 @@ class MainActivity : AppCompatActivity() {
                     val dialog = AlertDialog.Builder(this@MainActivity)
                     dialog.setTitle("Exit")
                     dialog.setMessage("Sure you want to exit?")
-                    dialog.setPositiveButton("Yes") { text, listner ->
+                    dialog.setPositiveButton("Yes") { _, _ ->
                         finishAffinity()
                     }
-                    dialog.setNegativeButton("Exit") { text, listner ->
+                    dialog.setNegativeButton("Exit") { _, _ ->
 
                     }
                     dialog.create()
@@ -119,10 +119,10 @@ class MainActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this@MainActivity)
         dialog.setTitle("Exit")
         dialog.setMessage("Sure you want to exit?")
-        dialog.setPositiveButton("Yes") { text, listner ->
+        dialog.setPositiveButton("Yes") { _, _ ->
             finish()
         }
-        dialog.setNegativeButton("Exit") { text, listner ->
+        dialog.setNegativeButton("Exit") { _, _ ->
 
         }
         dialog.create()

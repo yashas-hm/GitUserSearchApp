@@ -71,8 +71,7 @@ class ResultActivity : AppCompatActivity() {
         val followers = sharedPreferences.getString("followers", "")
         val name = sharedPreferences.getString("name", "")
 
-        var url = "https://api.github.com/search/users?q=$name&page=$count"
-        url = if(repo!=""&&followers!=""){
+        var url = if(repo!=""&&followers!=""){
             "https://api.github.com/search/users?q=$name+repos:%3e$repo+followers:%3e$followers&page=$count"
         } else if(repo!=""){
             "https://api.github.com/search/users?q=$name+repos:%3e$repo&page=$count"
@@ -131,11 +130,11 @@ class ResultActivity : AppCompatActivity() {
             val dialog = AlertDialog.Builder(this@ResultActivity)
             dialog.setTitle("Error")
             dialog.setMessage("Internet connection not Found")
-            dialog.setPositiveButton("Open Settings") { text, listner ->
+            dialog.setPositiveButton("Open Settings") { _, _ ->
                 val settingIntent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
                 startActivity(settingIntent)
             }
-            dialog.setNegativeButton("Exit") { text, listner ->
+            dialog.setNegativeButton("Exit") { _, _ ->
                 finishAffinity()
             }
             dialog.create()
@@ -182,7 +181,6 @@ class ResultActivity : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this@ResultActivity)
         progressBar.visibility = View.INVISIBLE
         var more = false
-        val extraData = arrayListOf<Data>()
         println("Request sent $count")
         if (ConnectionManager().checkConnectivity(this@ResultActivity)){
             val jsonObjectRequest = object: JsonObjectRequest(
@@ -234,11 +232,11 @@ class ResultActivity : AppCompatActivity() {
             val dialog = AlertDialog.Builder(this@ResultActivity)
             dialog.setTitle("Error")
             dialog.setMessage("Internet connection not Found")
-            dialog.setPositiveButton("Open Settings") { text, listner ->
+            dialog.setPositiveButton("Open Settings") { _, _ ->
                 val settingIntent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
                 startActivity(settingIntent)
             }
-            dialog.setNegativeButton("Exit") { text, listner ->
+            dialog.setNegativeButton("Exit") { _, _ ->
                 finishAffinity()
             }
             dialog.create()
